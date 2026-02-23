@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>投稿の仕方&サイト引き継ぎ2016 | UEC Photo</title>
+    <meta name="description" content="2016-04-03 | 投稿の仕方&サイト引き継ぎ2016" />
+    <link rel="icon" type="image/svg+xml" href="/pic/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="/style.css" type="text/css">
+</head>
+
+<body>
+    <div class="wrap">
+
+        <div id="site-header"></div>
+
+        <main>
+            <section class="panel about" aria-labelledby="about-heading">
+                <h2>投稿の仕方&サイト引き継ぎ2016</h2>
+                メモも兼ねて...
+                各種Passは別紙参照
+                <h2>投稿の仕方</h2>
+                写真展や新歓の告知とかは"投稿"、部の紹介的なものは"固定ページ"にて公開みたいな感じで。
+
+                ビジュアルモードかHTMLモードで適当に編集して、HTMLモードで改行とかも適当に調整すればいいと思う。過去記事を参考にしてネ。
+
+                画像を追加する際は、画像データのうp後に、タイトルは適当なものに書き換え、配置は中央、サイズは中、メディアのurlは画像直リン、"アイキャッチ画像として使用"を選択、"投稿に挿入"。
+                <h2><span style="text-decoration: underline;">テーマについて</span></h2>
+                テーマはWP公式で配布してた"Poseidon"を使いました。
+
+                headerとfooterを編集して使っていますが，Poseidonのアップデートで消えないように，子テーマ"Poseidon Child"を作成し，そこにいれてます．
+                <del>タイトルの下にキャッチフレーズが表示されるようにheader.phpを</del>、最下部にコピーライトが表示されるようにfooter.phpを、Poseidonデフォルトのものに書き加えています。
+                <p style="text-align: left; padding-left: 60px;"><del><span
+                            style="text-decoration: underline;">・header.php
+                        </span><em>青字を書き加える.</em></del></p>
+                <p style="text-align: left; padding-left: 60px;"><del>&lt;div id="logo" class="site-branding
+                        clearfix"&gt;</del>
+                    <del> &lt;?php do_action( 'poseidon_site_title' ); ?&gt;</del>
+                    <del> <span style="color: #3366ff;">    &lt;?php echo "&lt;br /&gt;"; ?&gt;</span></del>
+                    <del> <span style="color: #3366ff;">    &lt;?php bloginfo( 'description' ); ?&gt;</span></del>
+                    <del> &lt;/div&gt;&lt;!-- .site-branding --&gt;</del>
+                </p>
+                <p style="text-align: left; padding-left: 60px;"><span
+                        style="text-decoration: underline;">・footer.php</span></p>
+                <p style="text-align: left; padding-left: 60px;">   &lt;?php do_action( 'poseidon_footer_text' ); ?&gt;
+                </p>
+                <p style="text-align: left; padding-left: 60px;"><em>を消して</em></p>
+                <p style="text-align: left; padding-left: 60px;">   Copyright &amp;copy; &lt;?php echo date('Y');?&gt;
+                    &lt;?php bloginfo('name');?&gt; &amp;ndash; &lt;?php bloginfo('description'); ?&gt;</p>
+                <p style="text-align: left; padding-left: 60px;"><em>を消したところに書く.</em></p>
+
+                <h2>トップページについて</h2>
+                Poseidonの機能のひとつ，Magazine
+                Homepage(トップページに表示される投稿の一覧をグリッド表示みたいなのにできる機能)を使うために，"Homepage"という名前の空の固定ページを作成し，<em>設定/表示設定/フロントページの表示</em>
+                で固定ページでフロントページ:"Homepage" を設定しています．
+
+                Magazine Homepage は
+                任意のカテゴリーの投稿に対して，オッシャレにトップページに表示させることができる，Poseidonテーマの機能です。2パターンのカテゴリーまで設定できるようです。これらの設定は<em> 外観/ウィジェット 
+                </em>できます。
+
+                これを書いている現在は「<em>展示会情報</em>」と「<em>イベント</em>」にカテゴリーを設定した投稿のみに対し、Topページ表示されるように設定しています。新規投稿する時はカテゴリーの選択を忘れないように注意してください。<em>展示会情報</em>や<em>イベント</em>以外のカテゴリーの投稿もできますが，もし投稿しても投稿へのリンクはトップページには現れません。もし、トップページに表示させたい場合は，Magazine
+                Homepageの利用を中止してください。
+                もし、Poseidonテーマの使用をやめるときは，この設定を"最新の投稿"にしてから、他のテーマに変更してください。
+                <h2>トップページのサイドバーについて</h2>
+                <span id="Widget_Logic">Widget Logicというプラグインを使って，トップページ(フロントページ)にのみサイドバーを表示させています．</span>
+
+                参考:https://digipress.digi-state.com/manual/how-to-use-widget-logic/
+                <h2>SEOについて</h2>
+                "All in one
+                SEO"というプログラインを使っています。これでnoindexやnofollowとかの設定をしています。ついでにこのプログラインでホームページのdescriptionをも設定しています。
+                <h2>メディアとTwitter Cards</h2>
+                設定,メディア,ファイルへの完全なURLパス を
+                /wp/wp-content/uploads
+                から
+                http://www.uecphoto.club.uec.ac.jp/wp/wp-content/uploads
+                に変更しました。元は前者の相対パスで設定してあったのですが、そうであった理由は過去の先輩が書いた<a
+                    href="http://www.uecphoto.club.uec.ac.jp/?p=78">この記事</a>を見てください。変更した理由は、Twitter
+                Cardsを利用するためで、相対パスでこれが利用できないからです。
+                ドメイン等変更する場合は、参照して一応元に戻してください。(よくわかってない)
+
+                Twitter Cardsの設定もプラグイン"All in one SEO"で設定しました。
+
+                &nbsp;
+            </section>
+        </main>
+
+        <div id="site-footer"></div>
+    </div>
+</body>
+
+<script src="/main.js"></script>
+
+</html>
