@@ -1,5 +1,5 @@
 function loadHeader(){
-	fetch('header.html', { cache: 'no-store' })
+	fetch('/header.html', { cache: 'no-store' })
 		.then(function(res){ if(!res.ok) throw new Error(res.statusText); return res.text(); })
 		.then(function(html){
 			var container = document.getElementById('site-header');
@@ -28,7 +28,7 @@ function loadHeader(){
 }
 
 function loadFooter(){
-	fetch('footer.html', { cache: 'no-store' })
+	fetch('/footer.html', { cache: 'no-store' })
 		.then(function(res){ if(!res.ok) throw new Error(res.statusText); return res.text(); })
 		.then(function(html){
 			var container = document.getElementById('site-footer');
