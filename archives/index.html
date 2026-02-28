@@ -2,208 +2,599 @@
 <html lang="ja">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Archives | UEC Photo</title>
-    <meta name="description" content="過去 HP (WordPress) の投稿を HTML 化したアーカイブを一覧で表示しています。" />
-    <link rel="icon" type="image/svg+xml" href="/uecphoto_hp_demo/pic/favicon.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap">
-    <link rel="stylesheet" href="/uecphoto_hp_demo/style.css" type="text/css">
-    <style>
-      body{font-family: -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; padding:20px; background:#f7f7f7}
-      .cards{display:flex;flex-wrap:wrap;gap:16px;max-width:1100px;margin:0 auto}
-      .card{display:flex;flex-direction:column;width:320px;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);text-decoration:none;color:inherit}
-      .card .thumb{background:#e9e9e9;height:180px;display:flex;align-items:center;justify-content:center}
-      .card .thumb img{max-width:100%;max-height:100%;object-fit:cover;display:block}
-      .card .body{padding:12px}
-      .card h3{font-size:16px;margin:0 0 8px 0}
-      .meta{font-size:13px;color:#666;line-height:1.4}
-      .sticky{border:3px solid #ffcc00}
-      .note{font-size:12px;color:#999;margin-top:8px}
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Archives | UEC Photo</title>
+  <meta name="description" content="過去 HP (WordPress) の投稿を HTML 化したアーカイブを一覧で表示しています。" />
+  <link rel="icon" type="image/svg+xml" href="/pic/favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="/style.css" type="text/css">
+  <style>
+    body {
+      font-family: -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      padding: 20px;
+      background: #f7f7f7
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5%;
+      max-width: 100%;
+      margin: 0 auto
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: 47%;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      text-decoration: none;
+      color: inherit
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      background: #dbdbd8;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06)
+    }
+
+    .card .thumb {
+      background: #e9e9e9;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .card .thumb img {
+      width: 110%;
+      height: 110%;
+      object-fit: cover;
+      display: block
+    }
+
+    .card .body {
+      padding: 12px
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin: 0 0 8px 0
+    }
+
+    .meta {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.4
+    }
+
+    /* .sticky{border:3px solid #ffcc00} */
+    .note {
+      font-size: 12px;
+      color: #999;
+      margin-top: 8px
+    }
+  </style>
 </head>
 
 <body>
-    <div class="wrap">
+  <div class="wrap">
 
-        <div id="site-header"></div>
+    <div id="site-header"></div>
 
-        <main>
-            <section class="panel about" aria-labelledby="about-heading">
-                <h2>Archives</h2>
-                <p class="note">過去 HP (WordPress) の投稿を HTML 化したアーカイブを一覧で表示しています。</p>
-                <div class="cards">
-              
-                  <!-- 1 -->
-                  <a class="card sticky" href="2024-03-31_activity.html" data-author="admin" data-category="活動紹介" data-tags="" data-comments="—コメントはありません" data-status="公開済み" data-date="2024年3月31日 10:30 PM">
-                    <div class="thumb"><img src="/wp/wp_content/uploads/2018/04/0d40a5e4a645fc6b96e767d64ac0878e-300x249.jpg" alt="2023年度 後期活動紹介"></div>
-                    <div class="body"><h3>2023年度 後期活動紹介</h3>
-                      <div class="meta">admin · 活動紹介 · —タグなし · —コメントはありません · 公開済み · 2024年3月31日 10:30 PM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 2 -->
-                  <a class="card sticky" href="2023-11-20_activity.html" data-author="admin" data-category="活動紹介" data-tags="" data-comments="1件のコメント" data-status="公開済み" data-date="2023年11月20日 9:00 PM">
-                    <div class="thumb"><img src="/wp/wp_content/uploads/2018/04/0d40a5e4a645fc6b96e767d64ac0878e-300x249.jpg" alt="2023年度 前期活動紹介"></div>
-                    <div class="body"><h3>2023年度 前期活動紹介</h3>
-                      <div class="meta">admin · 活動紹介 · —タグなし · 1件のコメント · 公開済み · 2023年11月20日 9:00 PM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 3 -->
-                  <a class="card sticky" href="2023-04-06" data-author="admin" data-category="イベント、未分類" data-tags="uec23、新歓" data-comments="—コメントはありません" data-status="公開済み" data-date="2023年4月6日 7:00 AM">
-                    <div class="thumb"><img src="/wp/wp_content/uploads/2018/04/0d40a5e4a645fc6b96e767d64ac0878e-300x249.jpg" alt="2023年度 新入生へ、写真研究部にようこそ！"></div>
-                    <div class="body"><h3>2023年度 新入生へ、写真研究部にようこそ！</h3>
-                      <div class="meta">admin · イベント、未分類 · uec23、新歓 · —コメントはありません · 公開済み · 2023年4月6日 7:00 AM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 4 -->
-                  <a class="card" href="PUT_URL_HERE" data-author="admin" data-category="イベント" data-tags="" data-comments="—コメントはありません" data-status="公開済み" data-date="2022年4月7日 5:20 PM">
-                    <div class="thumb"><img src="PLACEHOLDER_IMAGE_04.jpg" alt="2022年度新入生の皆さん、ご入学おめでとうございます！"></div>
-                    <div class="body"><h3>2022年度新入生の皆さん、ご入学おめでとうございます！</h3>
-                      <div class="meta">admin · イベント · —タグなし · —コメントはありません · 公開済み · 2022年4月7日 5:20 PM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 5 -->
-                  <a class="card" href="PUT_URL_HERE" data-author="admin" data-category="イベント、展示会情報" data-tags="" data-comments="—コメントはありません" data-status="公開済み" data-date="2021年4月1日 1:59 AM">
-                    <div class="thumb"><img src="PLACEHOLDER_IMAGE_05.jpg" alt="2021年新入生歓迎展示のお知らせ"></div>
-                    <div class="body"><h3>2021年新入生歓迎展示のお知らせ</h3>
-                      <div class="meta">admin · イベント、展示会情報 · —タグなし · —コメントはありません · 公開済み · 2021年4月1日 1:59 AM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 6 -->
-                  <a class="card" href="PUT_URL_HERE" data-author="admin" data-category="イベント" data-tags="" data-comments="—コメントはありません" data-status="公開済み" data-date="2020年5月18日 1:17 AM">
-                    <div class="thumb"><img src="PLACEHOLDER_IMAGE_06.jpg" alt="2020年オンライン新歓のお知らせ"></div>
-                    <div class="body"><h3>2020年オンライン新歓のお知らせ</h3>
-                      <div class="meta">admin · イベント · —タグなし · —コメントはありません · 公開済み · 2020年5月18日 1:17 AM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 7 -->
-                  <a class="card" href="PUT_URL_HERE" data-author="admin" data-category="展示会情報" data-tags="" data-comments="—コメントはありません" data-status="公開済み" data-date="2019年10月3日 1:39 AM">
-                    <div class="thumb"><img src="PLACEHOLDER_IMAGE_07.jpg" alt="[展示会]2019年 調布祭展示会のお知らせ"></div>
-                    <div class="body"><h3>[展示会]2019年 調布祭展示会のお知らせ</h3>
-                      <div class="meta">admin · 展示会情報 · —タグなし · —コメントはありません · 公開済み · 2019年10月3日 1:39 AM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 8 -->
-                  <a class="card" href="PUT_URL_HERE" data-author="admin" data-category="展示会情報" data-tags="" data-comments="—コメントはありません" data-status="公開済み" data-date="2019年9月1日 1:28 AM">
-                    <div class="thumb"><img src="PLACEHOLDER_IMAGE_08.jpg" alt="電気通信大学 写真研究部 九月展 2019"></div>
-                    <div class="body"><h3>電気通信大学 写真研究部 九月展 2019</h3>
-                      <div class="meta">admin · 展示会情報 · —タグなし · —コメントはありません · 公開済み · 2019年9月1日 1:28 AM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 9 -->
-                  <a class="card" href="PUT_URL_HERE" data-author="Shirasu" data-category="展示会情報" data-tags="" data-comments="—コメントはありません" data-status="公開済み" data-date="2019年2月13日 11:47 PM">
-                    <div class="thumb"><img src="PLACEHOLDER_IMAGE_09.jpg" alt="電気通信大学写真研究部 卒展 2019"></div>
-                    <div class="body"><h3>電気通信大学写真研究部 卒展 2019</h3>
-                      <div class="meta">Shirasu · 展示会情報 · —タグなし · —コメントはありません · 公開済み · 2019年2月13日 11:47 PM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 10 -->
-                  <a class="card" href="PUT_URL_HERE" data-author="admin" data-category="展示会情報" data-tags="" data-comments="—コメントはありません" data-status="公開済み" data-date="2018年11月21日 11:54 PM">
-                    <div class="thumb"><img src="PLACEHOLDER_IMAGE_10.jpg" alt="[展示会]2018年 調布祭展示会のお知らせ"></div>
-                    <div class="body"><h3>[展示会]2018年 調布祭展示会のお知らせ</h3>
-                      <div class="meta">admin · 展示会情報 · —タグなし · —コメントはありません · 公開済み · 2018年11月21日 11:54 PM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 11 -->
-                  <a class="card" href="PUT_URL_HERE" data-author="赤木海斗" data-category="イベント" data-tags="" data-comments="—コメントはありません" data-status="公開済み" data-date="2018年4月4日 11:37 AM">
-                    <div class="thumb"><img src="PLACEHOLDER_IMAGE_11.jpg" alt="新入生のみなさん！ご入学おめでとうございます！！"></div>
-                    <div class="body"><h3>新入生のみなさん！ご入学おめでとうございます！！</h3>
-                      <div class="meta">赤木海斗 · イベント · —タグなし · —コメントはありません · 公開済み · 2018年4月4日 11:37 AM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 12 -->
-                  <a class="card" href="PUT_URL_HERE" data-author="NakanoHiroki" data-category="展示会情報" data-tags="三月展、日常" data-comments="—コメントはありません" data-status="公開済み" data-date="2018年3月17日 8:06 PM">
-                    <div class="thumb"><img src="PLACEHOLDER_IMAGE_12.jpg" alt="電気通信大学 写真研究部 三月展 “日常”"></div>
-                    <div class="body"><h3>電気通信大学 写真研究部 三月展 “日常”</h3>
-                      <div class="meta">NakanoHiroki · 展示会情報 · 三月展、日常 · —コメントはありません · 公開済み · 2018年3月17日 8:06 PM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 13 -->
-                  <a class="card" href="PUT_URL_HERE" data-author="kawa" data-category="展示会情報" data-tags="" data-comments="—コメントはありません" data-status="公開済み" data-date="2018年2月22日 2:17 PM">
-                    <div class="thumb"><img src="PLACEHOLDER_IMAGE_13.jpg" alt="電気通信大学写真研究部OB 卒展"></div>
-                    <div class="body"><h3>電気通信大学写真研究部OB 卒展</h3>
-                      <div class="meta">kawa · 展示会情報 · —タグなし · —コメントはありません · 公開済み · 2018年2月22日 2:17 PM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 14 -->
-                  <a class="card" href="PUT_URL_HERE" data-author="Shirasu" data-category="展示会情報" data-tags="" data-comments="—コメントはありません" data-status="公開済み" data-date="2017年11月10日 10:54 PM">
-                    <div class="thumb"><img src="PLACEHOLDER_IMAGE_14.jpg" alt="電気通信大学写真研究部 調布祭展2017"></div>
-                    <div class="body"><h3>電気通信大学写真研究部 調布祭展2017</h3>
-                      <div class="meta">Shirasu · 展示会情報 · —タグなし · —コメントはありません · 公開済み · 2017年11月10日 10:54 PM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 15 -->
-                  <a class="card" href="PUT_URL_HERE" data-author="Shirasu" data-category="展示会情報" data-tags="" data-comments="—コメントはありません" data-status="公開済み" data-date="2017年8月1日 7:33 PM">
-                    <div class="thumb"><img src="PLACEHOLDER_IMAGE_15.jpg" alt="電気通信大学写真研究部 9月展　「 都 市 」"></div>
-                    <div class="body"><h3>電気通信大学写真研究部 9月展　「 都 市 」</h3>
-                      <div class="meta">Shirasu · 展示会情報 · —タグなし · —コメントはありません · 公開済み · 2017年8月1日 7:33 PM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 16 -->
-                  <a class="card" href="PUT_URL_HERE" data-author="Shirasu" data-category="展示会情報" data-tags="" data-comments="—コメントはありません" data-status="公開済み" data-date="2017年6月24日 12:45 AM">
-                    <div class="thumb"><img src="PLACEHOLDER_IMAGE_16.jpg" alt="電気通信大学写真研究部 新人展 2017"></div>
-                    <div class="body"><h3>電気通信大学写真研究部 新人展 2017</h3>
-                      <div class="meta">Shirasu · 展示会情報 · —タグなし · —コメントはありません · 公開済み · 2017年6月24日 12:45 AM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 17 -->
-                  <a class="card" href="PUT_URL_HERE" data-author="Shirasu" data-category="展示会情報" data-tags="" data-comments="—コメントはありません" data-status="公開済み" data-date="2017年4月16日 6:00 PM">
-                    <div class="thumb"><img src="PLACEHOLDER_IMAGE_17.jpg" alt="電気通信大学写真研究部 4月展"></div>
-                    <div class="body"><h3>電気通信大学写真研究部 4月展</h3>
-                      <div class="meta">Shirasu · 展示会情報 · —タグなし · —コメントはありません · 公開済み · 2017年4月16日 6:00 PM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 18 -->
-                  <a class="card" href="PUT_URL_HERE" data-author="Shirasu" data-category="イベント" data-tags="" data-comments="—コメントはありません" data-status="公開済み" data-date="2017年4月4日 3:41 PM">
-                    <div class="thumb"><img src="PLACEHOLDER_IMAGE_18.jpg" alt="新入生のみなさん、ご入学おめでとうございます！"></div>
-                    <div class="body"><h3>新入生のみなさん、ご入学おめでとうございます！</h3>
-                      <div class="meta">Shirasu · イベント · —タグなし · —コメントはありません · 公開済み · 2017年4月4日 3:41 PM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 19 -->
-                  <a class="card" href="PUT_URL_HERE" data-author="SAKAI" data-category="展示会情報" data-tags="" data-comments="—コメントはありません" data-status="公開済み" data-date="2017年2月27日 7:13 PM">
-                    <div class="thumb"><img src="PLACEHOLDER_IMAGE_19.jpg" alt="電気通信大学写真研究部 卒展"></div>
-                    <div class="body"><h3>電気通信大学写真研究部 卒展</h3>
-                      <div class="meta">SAKAI · 展示会情報 · —タグなし · —コメントはありません · 公開済み · 2017年2月27日 7:13 PM</div>
-                    </div>
-                  </a>
-              
-                  <!-- 20 -->
-                  <a class="card" href="PUT_URL_HERE" data-author="Shirasu" data-category="展示会情報" data-tags="" data-comments="—コメントはありません" data-status="公開済み" data-date="2017年2月6日 3:58 PM">
-                    <div class="thumb"><img src="PLACEHOLDER_IMAGE_20.jpg" alt="電気通信大学写真研究部 3月展「光 / 影」"></div>
-                    <div class="body"><h3>電気通信大学写真研究部 3月展「光 / 影」</h3>
-                      <div class="meta">Shirasu · 展示会情報 · —タグなし · —コメントはありません · 公開済み · 2017年2月6日 3:58 PM</div>
-                    </div>
-                  </a>
-              
-                  <!-- Remaining items are included similarly above -->
-              
-                </div>
-            </section>
-        </main>
+    <main>
+      <section class="panel about" aria-labelledby="about-heading">
+        <h2>Archives</h2>
+        <p class="note">過去 HP (WordPress) の投稿を HTML 化したアーカイブを一覧で表示しています。</p>
+        <div class="cards">
 
-        <div id="site-footer"></div>
-    </div>
+          <!-- 1 -->
+          <a class="card" href="2024-03-31_activity.html" data-author="admin" data-category="活動紹介" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2024年3月31日 10:30 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2024/03/DSC04968-360x240.jpg" alt="2023年度 後期活動紹介"></div>
+            <div class="body">
+              <h3>2023年度 後期活動紹介</h3>
+              <div class="meta">活動紹介 · 公開済み <br />2024年3月31日 10:30 PM</div>
+            </div>
+          </a>
+
+          <!-- 2 -->
+          <a class="card" href="2023-11-20_activity.html" data-author="admin" data-category="活動紹介" data-tags=""
+            data-comments="1件のコメント" data-status="公開済み" data-date="2023年11月20日 9:00 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2023/11/09_IMG_7466.HEIC-360x240.jpg"
+                alt="2023年度 前期活動紹介"></div>
+            <div class="body">
+              <h3>2023年度 前期活動紹介</h3>
+              <div class="meta">活動紹介 ·· 公開済み <br />2023年11月20日 9:00 PM</div>
+            </div>
+          </a>
+
+          <!-- 3 -->
+          <a class="card" href="2023-04-06_freshman.html" data-author="admin" data-category="イベント、未分類"
+            data-tags="uec23、新歓" data-comments="—コメントはありません" data-status="公開済み" data-date="2023年4月6日 7:00 AM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2018/04/0d40a5e4a645fc6b96e767d64ac0878e-300x249.jpg"
+                alt="2023年度 新入生へ、写真研究部にようこそ！"></div>
+            <div class="body">
+              <h3>2023年度 新入生へ、写真研究部にようこそ！</h3>
+              <div class="meta">イベント · 公開済み <br />2023年4月6日 7:00 AM</div>
+            </div>
+          </a>
+
+          <!-- 4 -->
+          <a class="card" href="2022-04-07_freshman.html" data-author="admin" data-category="イベント" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2022年4月7日 5:20 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2018/04/0d40a5e4a645fc6b96e767d64ac0878e-300x249.jpg"
+                alt="2022年度新入生の皆さん、ご入学おめでとうございます！"></div>
+            <div class="body">
+              <h3>2022年度新入生の皆さん、ご入学おめでとうございます！</h3>
+              <div class="meta">イベント · 公開済み <br />2022年4月7日 5:20 PM</div>
+            </div>
+          </a>
+
+          <!-- 5 -->
+          <a class="card" href="2021-04-01_freshman.html" data-author="admin" data-category="イベント、展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2021年4月1日 1:59 AM">
+            <div class="thumb"><img
+                src="/wp/wp-content/uploads/2021/08/169136473_2053451798163723_4051454876482261917_n-360x240.jpg"
+                alt="2021年新入生歓迎展示のお知らせ"></div>
+            <div class="body">
+              <h3>2021年新入生歓迎展示のお知らせ</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2021年4月1日 1:59 AM</div>
+            </div>
+          </a>
+
+          <!-- 6 -->
+          <a class="card" href="2020-05-18_freshman.html" data-author="admin" data-category="イベント" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2020年5月18日 1:17 AM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2018/04/0d40a5e4a645fc6b96e767d64ac0878e-300x249.jpg"
+                alt="2020年オンライン新歓のお知らせ"></div>
+            <div class="body">
+              <h3>2020年オンライン新歓のお知らせ</h3>
+              <div class="meta">イベント · 公開済み <br />2020年5月18日 1:17 AM</div>
+            </div>
+          </a>
+
+          <!-- 7 -->
+          <a class="card" href="2019-10-03_gallery.html" data-author="admin" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2019年10月3日 1:39 AM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2021/08/2384532_5414847-360x240.jpg"
+                alt="[展示会]2019年 調布祭展示会のお知らせ"></div>
+            <div class="body">
+              <h3>[展示会]2019年 調布祭展示会のお知らせ</h3>
+              <div class="meta">展示会情報 ·· 公開済み <br />2019年10月3日 1:39 AM</div>
+            </div>
+          </a>
+
+          <!-- 8 -->
+          <a class="card" href="2019-09-01_gallery.html" data-author="admin" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2019年9月1日 1:28 AM">
+            <div class="thumb"><img
+                src="/wp/wp-content/uploads/2021/08/6dca5ea25d44b955da8a01015de73e0e-min-360x240.png"
+                alt="電気通信大学 写真研究部 九月展 2019"></div>
+            <div class="body">
+              <h3>電気通信大学 写真研究部 九月展 2019</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2019年9月1日 1:28 AM</div>
+            </div>
+          </a>
+
+          <!-- 9 -->
+          <a class="card" href="2019-02-13_gallery.html" data-author="Shirasu" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2019年2月13日 11:47 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2019/02/67ca27c05b469a91b516c7fe7a1bd544-360x240.jpg"
+                alt="電気通信大学写真研究部 卒展 2019"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 卒展 2019</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2019年2月13日 11:47 PM</div>
+            </div>
+          </a>
+
+          <!-- 10 -->
+          <a class="card" href="2018-11-21_gallery.html" data-author="admin" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2018年11月21日 11:54 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2018/11/2018_chofusaiDM-360x240.jpg"
+                alt="[展示会]2018年 調布祭展示会のお知らせ"></div>
+            <div class="body">
+              <h3>[展示会]2018年 調布祭展示会のお知らせ</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2018年11月21日 11:54 PM</div>
+            </div>
+          </a>
+
+          <!-- 11 -->
+          <a class="card" href="2018-04-04_freshman.html" data-author="赤木海斗" data-category="イベント" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2018年4月4日 11:37 AM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2018/04/0d40a5e4a645fc6b96e767d64ac0878e-300x249.jpg"
+                alt="新入生のみなさん！ご入学おめでとうございます！！"></div>
+            <div class="body">
+              <h3>新入生のみなさん！ご入学おめでとうございます！！</h3>
+              <div class="meta">イベント · 公開済み <br />2018年4月4日 11:37 AM</div>
+            </div>
+          </a>
+
+          <!-- 12 -->
+          <a class="card" href="2018-03-17_gallery.html" data-author="NakanoHiroki" data-category="展示会情報"
+            data-tags="三月展、日常" data-comments="—コメントはありません" data-status="公開済み" data-date="2018年3月17日 8:06 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2018/03/2018_March-Exhibition-360x240.jpg"
+                alt="電気通信大学 写真研究部 三月展 “日常”"></div>
+            <div class="body">
+              <h3>電気通信大学 写真研究部 三月展 “日常”</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2018年3月17日 8:06 PM</div>
+            </div>
+          </a>
+
+          <!-- 13 -->
+          <a class="card" href="2018-02-22_gallery.html" data-author="kawa" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2018年2月22日 2:17 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2018/02/de9f186bdc5bb1a53efe7a39b36cd7cc-360x240.png"
+                alt="電気通信大学写真研究部OB 卒展"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部OB 卒展</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2018年2月22日 2:17 PM</div>
+            </div>
+          </a>
+
+          <!-- 14 -->
+          <a class="card" href="2017-11-10_gallery.html" data-author="Shirasu" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2017年11月10日 10:54 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2017/11/cc952aed02ef455bf8937ce4f3e5fe36-360x240.jpg"
+                alt="電気通信大学写真研究部 調布祭展2017"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 調布祭展2017</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2017年11月10日 10:54 PM</div>
+            </div>
+          </a>
+
+          <!-- 15 -->
+          <a class="card" href="2017-08-01_gallery.html" data-author="Shirasu" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2017年8月1日 7:33 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2017/08/0e1f1c664e8085f6fd14c08101204c8d-360x240.jpg"
+                alt="電気通信大学写真研究部 9月展　「 都 市 」"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 9月展　「 都 市 」</h3>
+              <div class="meta">展示会情報 ·· 公開済み <br />2017年8月1日 7:33 PM</div>
+            </div>
+          </a>
+
+          <!-- 16 -->
+          <a class="card" href="2017-06-24_gallery.html" data-author="Shirasu" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2017年6月24日 12:45 AM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2017/06/8934da395a0b2a0a104c0828b42416fc-360x240.png"
+                alt="電気通信大学写真研究部 新人展 2017"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 新人展 2017</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2017年6月24日 12:45 AM</div>
+            </div>
+          </a>
+
+          <!-- 17 -->
+          <a class="card" href="2017-04-16_gallery.html" data-author="Shirasu" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2017年4月16日 6:00 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2017/04/DSC09779-4-360x240.jpg" alt="電気通信大学写真研究部 4月展">
+            </div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 4月展</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2017年4月16日 6:00 PM</div>
+            </div>
+          </a>
+
+          <!-- 18 -->
+          <a class="card" href="2017-04-04_freshman.html" data-author="Shirasu" data-category="イベント" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2017年4月4日 3:41 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2017/04/0d40a5e4a645fc6b96e767d64ac0878e-360x240.jpg"
+                alt="新入生のみなさん、ご入学おめでとうございます！"></div>
+            <div class="body">
+              <h3>新入生のみなさん、ご入学おめでとうございます！</h3>
+              <div class="meta">イベント · 公開済み <br />2017年4月4日 3:41 PM</div>
+            </div>
+          </a>
+
+          <!-- 19 -->
+          <a class="card" href="2017-02-27_gallery.html" data-author="SAKAI" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2017年2月27日 7:13 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2017/02/IMGP0255-360x240.jpg" alt="電気通信大学写真研究部 卒展">
+            </div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 卒展</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2017年2月27日 7:13 PM</div>
+            </div>
+          </a>
+
+          <!-- 20 -->
+          <a class="card" href="2017-02-06_gallery.html" data-author="Shirasu" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2017年2月6日 3:58 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2017/02/hikarikage-480x320.jpg"
+                alt="電気通信大学写真研究部 3月展「光 / 影」"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 3月展「光 / 影」</h3>
+              <div class="meta">展示会情報 ·· 公開済み <br />2017年2月6日 3:58 PM</div>
+            </div>
+          </a>
+
+          <!-- Remaining items are included similarly above -->
+          <!-- 21 -->
+          <a class="card" href="2016-11-03_gallery.html" data-author="kawa" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2016年11月3日 12:47 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2016/10/chofusai16_omote_small-360x240.png"
+                alt="電気通信大学写真研究部 調布祭展2016"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 調布祭展2016</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2016年11月3日 12:47 PM</div>
+            </div>
+          </a>
+
+          <!-- 22 -->
+          <a class="card" href="2016-08-18_gallery.html" data-author="kawa" data-category="展示会情報" data-tags=""
+            data-comments="1件のコメント" data-status="公開済み" data-date="2016年8月18日 12:00 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2016/08/29d89d47f21f91136b391c3ca3def426-360x240.jpg"
+                alt="電気通信大学写真研究部 9月展「彩」"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 9月展「彩」</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2016年8月18日 12:00 PM</div>
+            </div>
+          </a>
+
+          <!-- 23 -->
+          <a class="card" href="2016-07-04_gallery.html" data-author="kawa" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2016年7月4日 7:37 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2016/07/dfd70aaf08f37bdabae99e4a9164f01d-3-360x240.jpg"
+                alt="電気通信大学写真研究部 2016年度 新人展"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 2016年度 新人展</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2016年7月4日 7:37 PM</div>
+            </div>
+          </a>
+
+          <!-- 24 -->
+          <a class="card" href="2016-04-03_management.html" data-author="kawa" data-category="サイト管理" data-tags=""
+            data-comments="—コメントはありません" data-status="非公開" data-date="2016年4月3日 10:33 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2017/05/0ca7e31bcd1f7fadaa8374c8e0c064a5-360x240.png"
+                alt="投稿の仕方&amp;サイト引き継ぎ2016"></div>
+            <div class="body">
+              <h3>投稿の仕方&amp;サイト引き継ぎ2016</h3>
+              <div class="meta">サイト管理 · 非公開 · 2016年4月3日 10:33 PM</div>
+            </div>
+          </a>
+
+          <!-- 25 -->
+          <a class="card" href="2016-03-27_event.html" data-author="kawa" data-category="イベント" data-tags="新歓"
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2016年3月27日 2:36 AM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2016/03/UEC-Photo2015spring-360x240.jpg"
+                alt="［電気通信大学写真研究部 新歓情報］ 新入生の皆様へ"></div>
+            <div class="body">
+              <h3>［電気通信大学写真研究部 新歓情報］ 新入生の皆様へ</h3>
+              <div class="meta">イベント 公開済み <br />2016年3月27日 2:36 AM</div>
+            </div>
+          </a>
+
+          <!-- 26 -->
+          <a class="card" href="2016-03-13_gallery.html" data-author="nabe" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2016年3月13日 1:51 AM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2016/03/1821d11286ebbfeb12e1f92cf1fba4cd-360x240.jpeg" alt="電気通信大学写真研究部OB/OG 卒展">
+            </div>
+            <div class="body">
+              <h3>電気通信大学写真研究部OB/OG 卒展</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2016年3月13日 1:51 AM</div>
+            </div>
+          </a>
+
+          <!-- 27 -->
+          <a class="card" href="2016-02-20_gallery.html" data-author="kawa" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2016年2月20日 3:00 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2016/02/db83d48882097bc16801cb91f20a94701-360x240.jpg"
+                alt="電気通信大学写真研究部 3月展「視点」"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 3月展「視点」</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2016年2月20日 3:00 PM</div>
+            </div>
+          </a>
+
+          <!-- 28 -->
+          <a class="card" href="2015-11-12_gallery.html" data-author="SAKAI" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2015年11月12日 2:07 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2015/11/cc952aed02ef455bf8937ce4f3e5fe361-360x240.jpg"
+                alt="電気通信大学写真研究部 調布祭展2015"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 調布祭展2015</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2015年11月12日 2:07 PM</div>
+            </div>
+          </a>
+
+          <!-- 29 -->
+          <a class="card" href="2015-09-11_gallery.html" data-author="gaki" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2015年9月11日 7:42 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2015/09/2015.8.24-a1-360x240.jpg"
+                alt="電気通信大学写真研究部 9月展「瞬間」"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 9月展「瞬間」</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2015年9月11日 7:42 PM</div>
+            </div>
+          </a>
+
+          <!-- 30 -->
+          <a class="card" href="2015-03-17_gallery.html" data-author="gaki" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2015年3月17日 1:14 AM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2015/03/DM-360x240.jpg"
+                alt="電気通信大学写真研究部 3月展「Impressions」"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 3月展「Impressions」</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2015年3月17日 1:14 AM</div>
+            </div>
+          </a>
+
+          <!-- 31 -->
+          <a class="card" href="2014-11-01_gallery.html" data-author="nabe" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2014年11月1日 1:54 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2014/11/DMinNov2-480x320.jpg"
+                alt="電気通信大学写真研究部 調布祭展2014"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 調布祭展2014</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2014年11月1日 1:54 PM</div>
+            </div>
+          </a>
+
+          <!-- 32 -->
+          <a class="card" href="2014-09-08_gallery.html" data-author="nabe" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2014年9月8日 1:13 AM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2014/09/f8e54bee8bce938cb3ee6e57e75461b56-360x240.jpg"
+                alt="電気通信大学写真研究部 9月展 「My Favorite Things」"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 9月展 「My Favorite Things」</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2014年9月8日 1:13 AM</div>
+            </div>
+          </a>
+
+          <!-- 33 -->
+          <a class="card" href="2014-06-29_gallery.html" data-author="nabe" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2014年6月29日 1:56 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2017/05/Cg5VP-DUoAEfjuM-480x320.jpg" alt="2014年度新人展のお知らせ">
+            </div>
+            <div class="body">
+              <h3>2014年度新人展のお知らせ</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2014年6月29日 1:56 PM</div>
+            </div>
+          </a>
+
+          <!-- 34 -->
+          <a class="card" href="2014-04-03_event.html" data-author="admin" data-category="イベント" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2014年4月3日 3:09 AM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2018/04/0d40a5e4a645fc6b96e767d64ac0878e-300x249.jpg"
+                alt="新入生の皆様、ご入学おめでとうございます。"></div>
+            <div class="body">
+              <h3>新入生の皆様、ご入学おめでとうございます。</h3>
+              <div class="meta">イベント · 公開済み <br />2014年4月3日 3:09 AM</div>
+            </div>
+          </a>
+
+          <!-- 35 -->
+          <a class="card" href="2014-03-03_gallery.html" data-author="Adachi" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2014年3月3日 1:23 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2014/03/1912117_469121763188668_1542690882_o-480x320.jpg"
+                alt="電気通信大学写真研究部OB&amp;OG「卒展」"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部OB&amp;OG「卒展」</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2014年3月3日 1:23 PM</div>
+            </div>
+          </a>
+
+          <!-- 36 -->
+          <a class="card" href="2014-03-02_gallery.html" data-author="Ikuta" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2014年3月2日 1:06 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2014/03/05217ed6d9481edb380536089e774d0f1-480x320.jpg"
+                alt="電気通信大学写真研究部 三月展「一枚展 -記憶-」"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 三月展「一枚展 -記憶-」</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2014年3月2日 1:06 PM</div>
+            </div>
+          </a>
+
+          <!-- 37 -->
+          <a class="card" href="2013-11-08_gallery.html" data-author="mno2li" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2013年11月8日 10:29 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2013/11/a-360x240.jpg"
+                alt="電気通信大学写真研究部 調布祭展"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 調布祭展</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2013年11月8日 10:29 PM</div>
+            </div>
+          </a>
+
+          <!-- 38 -->
+          <a class="card" href="2013-08-09_gallery.html" data-author="mno2li" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2013年8月9日 4:56 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2013/08/DM-360x240.jpg"
+                alt="電気通信大学写真研究部 9月展「東京」"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 9月展「東京」</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2013年8月9日 4:56 PM</div>
+            </div>
+          </a>
+
+          <!-- 39 -->
+          <a class="card" href="2013-06-28_gallery.html" data-author="mno2li" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2013年6月28日 12:07 AM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2017/05/Cg5VP-DUoAEfjuM-480x320.jpg" alt="2013年度新人展のお知らせ">
+            </div>
+            <div class="body">
+              <h3>2013年度新人展のお知らせ</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2013年6月28日 12:07 AM</div>
+            </div>
+          </a>
+
+          <!-- 40 -->
+          <a class="card" href="2013-04-01_event.html" data-author="mno2li" data-category="イベント" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2013年4月1日 12:00 AM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2018/04/0d40a5e4a645fc6b96e767d64ac0878e-300x249.jpg"
+                alt="新入生の方、ご入学おめでとうございます。"></div>
+            <div class="body">
+              <h3>新入生の方、ご入学おめでとうございます。</h3>
+              <div class="meta">イベント · 公開済み <br />2013年4月1日 12:00 AM</div>
+            </div>
+          </a>
+
+          <!-- 41 -->
+          <a class="card" href="2013-03-08_gallery.html" data-author="mno2li" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2013年3月8日 2:17 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2017/05/Cg5VP-DUoAEfjuM-480x320.jpg" alt="電気通信大学写真研究部 卒展">
+            </div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 卒展</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2013年3月8日 2:17 PM</div>
+            </div>
+          </a>
+
+          <!-- 42 -->
+          <a class="card" href="2013-02-28_gallery.html" data-author="mno2li" data-category="展示会情報" data-tags=""
+            data-comments="—コメントはありません" data-status="公開済み" data-date="2013年2月28日 4:50 PM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2013/02/a-360x240.jpg"
+                alt="電気通信大学写真研究部 3月展「モノカラ展」"></div>
+            <div class="body">
+              <h3>電気通信大学写真研究部 3月展「モノカラ展」</h3>
+              <div class="meta">展示会情報 · 公開済み <br />2013年2月28日 4:50 PM</div>
+            </div>
+          </a>
+
+          <!-- 43 -->
+          <a class="card" href="2012-04-27_post.html" data-author="Yonekura" data-category="未分類" data-tags=""
+            data-comments="1件のコメント" data-status="公開済み" data-date="2012年4月27日 1:56 AM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2012/04/DSC07976-360x240.jpg" alt="Laos"></div>
+            <div class="body">
+              <h3>Laos</h3>
+              <div class="meta">投稿 · 公開済み <br />2012年4月27日 1:56 AM</div>
+            </div>
+          </a>
+
+          <!-- 44 -->
+          <a class="card" href="2000-08-28_post.html" data-author="kannpouyoucolonel" data-category="未分類"
+            data-tags="富士総合火力演習" data-comments="—コメントはありません" data-status="公開済み" data-date="2000年8月28日 9:23 AM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2012/08/DSC07108-360x240.jpg" alt="富士総合火力演習に行って">
+            </div>
+            <div class="body">
+              <h3>富士総合火力演習に行って</h3>
+              <div class="meta">投稿 · 公開済み <br />2000年8月28日 9:23 AM</div>
+            </div>
+          </a>
+
+          <!-- 45 -->
+          <a class="card" href="2012-2013_archives.html" data-author="admin" data-category="未分類" data-tags=""
+            data-comments="—コメントはありません" data-status="非公開" data-date="2013年1月3日 10:43 PM - 2012年4月17日 12:30 AM">
+            <div class="thumb"><img src="/wp/wp-content/uploads/2017/05/0ca7e31bcd1f7fadaa8374c8e0c064a5-360x240.png" alt="未分類アーカイブ"></div>
+            <div class="body">
+              <h3>未分類アーカイブ</h3>
+              <div class="meta">未分類 · 非公開 · 2013年1月3日 10:43 PM - 2012年4月17日 12:30 AM</div>
+            </div>
+          </a>
+
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+  </div>
 </body>
 
-<script src="/uecphoto_hp_demo/main.js"></script>
+<script src="/js/main.js"></script>
 
 </html>
