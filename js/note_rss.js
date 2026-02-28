@@ -9,6 +9,7 @@
             const res = await fetch(api);
             if (!res.ok) throw new Error("Failed to fetch RSS");
             const text = await res.text();
+            // console.log('Fetched RSS text:', text);
             const doc = new DOMParser().parseFromString(text, "application/xml");
             const items = Array.from(doc.querySelectorAll("item")).slice(0, 3);
             if (items.length === 0) {
@@ -17,35 +18,60 @@
             }
             target.innerHTML = "";
             items.forEach(it => {
+                // const thumb = it.querySelector("media:thumbnail")?.textContent || "/wp/wp-content/uploads/2018/04/0d40a5e4a645fc6b96e767d64ac0878e-300x249.jpg";
                 const title = it.querySelector("title")?.textContent || "無題";
                 const link = it.querySelector("link")?.textContent || "#";
                 // const pub = it.querySelector("pubDate")?.textContent || "";
                 const pubRaw = it.querySelector("pubDate")?.textContent || "";
+                function pad(n) { return String(n).padStart(2, '0'); }
+                const weekdayShortJa = ['日', '月', '火', '水', '木', '金', '土'];
+                function formatDate(d, fmt) {
+                    return fmt.replace(/YYYY|MM|DD|HH|mm|ss|ddd/g, token => {
+                        switch (token) {
+                            case 'YYYY': return d.getFullYear();
+                            case 'MM': return pad(d.getMonth() + 1);
+                            case 'DD': return pad(d.getDate());
+                            case 'HH': return pad(d.getHours());
+                            case 'mm': return pad(d.getMinutes());
+                            case 'ss': return pad(d.getSeconds());
+                            case 'ddd': return weekdayShortJa[d.getDay()];
+                        }
+                    });
+                }
+                // 例：希望の表示形式をここで変更
+                const FORMAT = 'YYYY年MM月DD日 (ddd) HH:mm';
                 let pub = "";
                 if (pubRaw) {
                     const d = new Date(pubRaw);
                     if (!isNaN(d)) {
-                        d.setHours(d.getHours() + 9);
-                        pub = d.toLocaleString('ja-JP', {
-                            timeZone: 'Asia/Tokyo',
-                            year: 'numeric',
-                            month: '2-digit',
-                            day: '2-digit',
-                            weekday: 'short',
-                            hour: '2-digit',
-                            minute: '2-digit',
-                            second: '2-digit'
-                        }).replace(/\u200E/g, ''); // remove any stray LTR mark
+                        pub = formatDate(d, FORMAT)
                     } else {
                         pub = pubRaw;
                     }
                 }
+                // サムネイル候補を順に探す
+                const getAttr = (sel, attr) => it.querySelector(sel)?.getAttribute(attr) || null;
+                const thumbFromDesc = (() => {
+                    const desc = it.querySelector('description')?.textContent || '';
+                    const m = desc.match(/<img[^>]+src=["']?([^"' >]+)/i);
+                    return m ? m[1] : null;
+                })();
+                const thumbUrl = getAttr('media\\:thumbnail', 'url') || getAttr('media\\:content', 'url') || getAttr('enclosure', 'url') || thumbFromDesc || null;
+
                 const el = document.createElement("a");
                 el.className = "post";
                 el.href = link;
                 el.target = "_blank";
                 el.rel = "noopener noreferrer";
-                el.innerHTML = '<div class="title">' + title + '</div><div class="date">' + pub + '</div>';
+
+                // HTML を組み立て（サムネイルがあれば先頭に挿入）
+                let html = '';
+                if (thumbUrl) {
+                    const safeAlt = String(title).replace(/"/g, '&quot;');
+                    html += '<div class="thumb"><img src="' + thumbUrl + '" alt="' + safeAlt + '" loading="lazy"></div>';
+                }
+                html += '<div class="title">' + title + '</div><div class="date">' + pub + '</div>';
+                el.innerHTML = html;
                 target.appendChild(el);
             });
         } catch (err) {
