@@ -49,14 +49,6 @@
                         pub = pubRaw;
                     }
                 }
-                // サムネイル候補を順に探す
-                const getAttr = (sel, attr) => it.querySelector(sel)?.getAttribute(attr) || null;
-                const thumbFromDesc = (() => {
-                    const desc = it.querySelector('description')?.textContent || '';
-                    const m = desc.match(/<img[^>]+src=["']?([^"' >]+)/i);
-                    return m ? m[1] : null;
-                })();
-                const thumbUrl = getAttr('media\\:thumbnail', 'url') || getAttr('media\\:content', 'url') || getAttr('enclosure', 'url') || thumbFromDesc || null;
 
                 const el = document.createElement("a");
                 el.className = "post";
@@ -65,12 +57,7 @@
                 el.rel = "noopener noreferrer";
 
                 // HTML を組み立て（サムネイルがあれば先頭に挿入）
-                let html = '';
-                if (thumbUrl) {
-                    const safeAlt = String(title).replace(/"/g, '&quot;');
-                    html += '<div class="thumb"><img src="' + thumbUrl + '" alt="' + safeAlt + '" loading="lazy"></div>';
-                }
-                html += '<div class="title">' + title + '</div><div class="date">' + pub + '</div>';
+                let html = '<div class="title">' + title + '</div><div class="date">' + pub + '</div>';
                 el.innerHTML = html;
                 target.appendChild(el);
             });
